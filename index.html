@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Delta Playtest</title>
+<meta name="description" content="Download the Delta playtest build for Windows and battle your friends online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f1e8; --panel: #ffffff; --ink: #1f2a2c; --muted: #5f6d6a; --line: #dcd7c9;
+  --accent: #2f8f74; --accent-ink: #ffffff; --tag: #263234; --tag-ink: #f5efd9;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121819; --panel: #1b2325; --ink: #eef0ea; --muted: #a2adaa; --line: #2c3739;
+    --accent: #5cc4a1; --accent-ink: #0d1514; --tag: #e9e4d4; --tag-ink: #1b2325;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121819; --panel: #1b2325; --ink: #eef0ea; --muted: #a2adaa; --line: #2c3739;
+  --accent: #5cc4a1; --accent-ink: #0d1514; --tag: #e9e4d4; --tag-ink: #1b2325;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 500 17px/1.55 Nunito, system-ui, sans-serif; }
+main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+.tag { display: inline-block; background: var(--tag); color: var(--tag-ink); font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius: 999px; }
+h1 { font-size: clamp(34px, 7vw, 52px); line-height: 1.05; margin: 14px 0 10px; font-weight: 800; }
+h2 { font-size: 21px; margin: 0 0 10px; font-weight: 800; }
+p { margin: 0 0 12px; }
+.lead { color: var(--muted); font-size: 19px; max-width: 34em; }
+.download { display: flex; flex-wrap: wrap; gap: 12px 18px; align-items: center; margin: 26px 0 36px; }
+.button { display: inline-block; background: var(--accent); color: var(--accent-ink); font-weight: 800; text-decoration: none; padding: 14px 26px; border-radius: 14px; font-size: 18px; }
+.button:hover { filter: brightness(1.06); }
+.small { color: var(--muted); font-size: 15px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 22px 24px; margin-bottom: 16px; }
+ol, ul { margin: 0; padding-left: 22px; }
+li { margin: 4px 0; }
+kbd { font: 700 13px/1 Nunito, sans-serif; background: var(--bg); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; padding: 3px 7px; white-space: nowrap; }
+.keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 6px 24px; }
+.keys div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding: 5px 0; }
+a { color: var(--accent); }
+footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+</style>
+</head>
+<body>
+<main>
+  <span class="tag">Playtest · Windows</span>
+  <h1>Delta</h1>
+  <p class="lead">A fan-made Pokémon adventure around Sky Pillar Port and the Verdance Isles. This build is for friends, mostly to test online battles.</p>
+
+  <div class="download">
+    <a class="button" href="https://github.com/MathieuDvv/PL-Delta-playtest/releases/latest/download/Delta-Playtest.zip">Download for Windows</a>
+    <span class="small">64-bit Windows · about 2 GB · <a href="https://github.com/MathieuDvv/PL-Delta-playtest/releases">all builds</a></span>
+  </div>
+
+  <section class="card">
+    <h2>Install</h2>
+    <ol>
+      <li>Unzip the whole folder anywhere, then run <b>Delta.exe</b>. Keep <b>Delta.pck</b> next to it.</li>
+      <li>If Windows SmartScreen warns about an unknown app, click <b>More info</b>, then <b>Run anyway</b>. The build isn't signed.</li>
+      <li>When Windows Firewall asks whether Delta can use the network, click <b>Allow</b> (private networks at least). Online battles need it.</li>
+    </ol>
+  </section>
+
+  <section class="card">
+    <h2>Battle a friend online</h2>
+    <ol>
+      <li>Both players walk into the Pokémon Center and talk to the <b>Online Battle Attendant</b>.</li>
+      <li>One player chooses <b>Host a battle</b>. The game opens a port on their router by itself and shows an <b>Internet</b> link code, such as <code>2RNK3-W6YQY</code>.</li>
+      <li>The host sends that code (Discord, text…). The other player chooses <b>Join a battle</b> and types it.</li>
+      <li>Draft three Pokémon each from the grid, press <b>Battle!</b>, and fight. Nothing is lost: it uses full-health copies.</li>
+    </ol>
+    <p class="small" style="margin-top:12px">On the same Wi-Fi, use the <b>Same network</b> code, or pick the host from the list. If the host's screen says the router refused or no router answered, someone else should try hosting, or forward UDP port 47870 to the host's PC. Some internet providers share one address between homes; then only the other player can host.</p>
+  </section>
+
+  <section class="card">
+    <h2>Controls</h2>
+    <div class="keys">
+      <div><span>Move · look</span><span><kbd>WASD</kbd> <kbd>Mouse</kbd></span></div>
+      <div><span>Sprint · jump · dodge</span><span><kbd>Shift</kbd> <kbd>Space</kbd> <kbd>Alt</kbd></span></div>
+      <div><span>Talk · interact</span><span><kbd>R</kbd></span></div>
+      <div><span>Team / items dial</span><span><kbd>X</kbd> <kbd>Q</kbd> <kbd>E</kbd></span></div>
+      <div><span>Throw a ball</span><span><kbd>Left click</kbd></span></div>
+      <div><span>Call Rayquaza</span><span><kbd>Tab</kbd></span></div>
+      <div><span>Bag · journal</span><span><kbd>B</kbd> <kbd>J</kbd></span></div>
+      <div><span>Pause · fullscreen</span><span><kbd>Esc</kbd> <kbd>F11</kbd></span></div>
+      <div><span>Free the mouse</span><span><kbd>F10</kbd></span></div>
+    </div>
+    <p class="small" style="margin-top:14px">In battle: <kbd>↑</kbd> or left click attacks, <kbd>←</kbd> or right click blocks, <kbd>→</kbd> avoids, <kbd>Tab</kbd> opens moves, <kbd>B</kbd> opens items and switching. Sailor Duncan on the ferry pier, where you arrive, walks you through it. A controller works too.</p>
+  </section>
+
+  <footer>Fan project, not affiliated with Nintendo, Game Freak or The Pokémon Company. Report bugs to whoever sent you this link.</footer>
+</main>
+</body>
+</html>
